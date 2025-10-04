@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  }
+}
+
+/* Slider container styles */
+.hero-slider {
+  width: 100vw;
+  max-width: 100vw;
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Each slide centers its content */
+.hero-slider .slick-slide {
+  height: 60vh;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+/* All images have the same size and aspect ratio */
+.hero-slider img {
+  width: 100vw;
+  height: 60vh;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  background: transparent;
+  border-radius: 0;
+}
+
+/* Slick arrows styling */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  font-size: 30px;
+  color: #c026d3; /* Example brand color */
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+}
+.slick-prev {
+  left: 10px;
+}
+.slick-next {
+  right: 10px;
+}
+
+/* Slick dots styling */
+.slick-dots {
+  bottom: 15px;
+}
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #c026d3;
+}
+.slick-dots li.slick-active button:before {
+  color: #1e293b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .hero-slider,
+  .hero-slider .slick-slide,
+  .hero-slider img {
+    height: 40vh;
+  }
+}
+@media (max-width: 600px) {
+  .hero-slider,
+  .hero-slider .slick-slide,
+  .hero-slider img {
+    height: 25vh;
+  }
+}
+
+/* Footer logo size fix */
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  min-width: 200%; /* Ensures it starts off-screen */
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
